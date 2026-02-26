@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import LayoutContainer from "../components/LayoutContainer";
 
 const MainLayout = () => {
   return (
-    <div>MainLayout</div>
-  )
-}
+    <>
+      <LayoutContainer />
+    </>
+  );
+};
 
-export default MainLayout
+export default MainLayout;
