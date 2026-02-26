@@ -12,7 +12,7 @@ function App() {
           <div className="mb-6">
             <div className="flex items-center">
               <svg
-              className="w-6 h-6"
+                className="w-6 h-6"
                 data-slot="icon"
                 fill="none"
                 stroke-width="1.5"
@@ -52,17 +52,22 @@ function App() {
           </ul>
         </aside>
 
-        <main className="col-span-3">
-          <div className="flex justify-between mb-5">
-            <h2>Home</h2>
-            <div>
+        <main className="col-span-3 border my-4 mr-4 rounded-xl border-[#3a414e] px-3 py-3">
+          <div className="flex items-center justify-between gap-6 mb-5 border border-[#3a414e] rounded-md px-3 py-4">
+            <h2 className="text-lg font-semibold">Home</h2>
+            <form action="" className="flex gap-x-1 items-center">
               <input
                 type="search"
-                id="search"
-                placeholder="Search Movies By Title...."
+                placeholder="Search movies ..."
+                className="bg-black placeholder:text-xs px-4 border border-[#3a414e] rounded-tl-3xl rounded-bl-3xl w-2xl h-10"
               />
-              <button>Search</button>
-            </div>
+              <button
+                type="submit"
+                className="bg-yellow-600 py-1 px-4 font-semibold text-sm rounded-tr-3xl rounded-br-3xl border border-[#3a414e] h-8"
+              >
+                Search
+              </button>
+            </form>
           </div>
 
           <div>
