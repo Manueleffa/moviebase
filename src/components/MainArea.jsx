@@ -5,7 +5,7 @@ import placeHolder from "../assets/placeHolder.png";
 
 const MainArea = () => {
   return (
-    <main className="col-span-3 border my-4 mr-4 rounded-xl border-[#3a414e] px-3 py-3">
+    <main className="col-span-3 border my-4 mr-4 rounded-xl border-[#3a414e] px-3 py-3 h-[96vh] overflow-y-auto">
       <Topbar />
       <Outlet />
     </main>
