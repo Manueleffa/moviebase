@@ -12,7 +12,10 @@ import HomePage from "./pages/HomePage";
 import ActionPage from "./pages/ActionPage";
 import ComedyPage from "./pages/ComedyPage";
 import TvShowsPage from "./pages/TvShowsPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage"
+import SearchPage from "./pages/SearchPage"
 import NotFoundPage from "./pages/NotFoundPage";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +24,8 @@ const router = createBrowserRouter(
       <Route path="action" element={<ActionPage />} />
       <Route path="comedy" element={<ComedyPage />} />
       <Route path="tvshows" element={<TvShowsPage />} />
+      <Route path="moviedetails" element={<MovieDetailsPage />} />
+      <Route path="search" element={<SearchPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Route>,
   ),
