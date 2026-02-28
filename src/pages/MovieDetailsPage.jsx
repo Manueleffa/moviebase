@@ -41,12 +41,24 @@ const MovieDetailsPage = () => {
         />
       </div>
       <div className="col-span-2">
-        <h2 className="text-3xl font-bold text-center mb-10">{movie.Title}</h2>
+        <h2 className="text-3xl font-bold text-center mb-7 text-yellow-700">
+          {movie.Title}
+        </h2>
         <h3 className="text-md font-bold mb-3">
-          Rating: {movie.imdbRating}/10
+          <span className="text-yellow-700">Rating:</span> {movie.imdbRating}/10
+        </h3>
+        <h3 className="text-md font-bold mb-2">
+          <span className="text-yellow-700">Release Date:</span>{" "}
+          {movie.Released}
+        </h3>
+        <h3 className="text-md font-bold mb-2">
+          <span className="text-yellow-700">Genre:</span> {movie.Genre}
+        </h3>
+        <h3 className="text-md font-bold mb-2">
+          <span className="text-yellow-700">Director:</span> {movie.Director}
         </h3>
         <h3 className="text-md font-bold mb-5">
-          Release Date: {movie.Released}
+          <span className="text-yellow-700">Actors:</span> {movie.Actors}
         </h3>
         <p>{movie.Plot}</p>
       </div>
