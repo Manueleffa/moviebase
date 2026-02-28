@@ -15,10 +15,10 @@ const MovieDetailsPage = () => {
 
       const data = await getMovieById(imdbID);
 
-      if (data.response === "True") {
+      if (data.Response === "True") {
         setMovie(data);
       } else {
-        setError(data.Error)
+        setError(data.Error);
       }
 
       setLoading(false);
@@ -27,18 +27,26 @@ const MovieDetailsPage = () => {
     fetchMovie();
   }, [imdbID]);
 
-  if(loading) return <p className="text-center">Loading...</p>
-  if(error) return <p className="text-center text-red-500">{error}</p>
+  if (loading) return <p className="text-center">Loading...</p>;
+  if (error) return <p className="text-center text-red-500">{error}</p>;
+  if (!movie) return null;
 
   return (
     <div className="grid grid-cols-3 items-center gap-x-15 p-4">
       <div className="col-span-1 border rounded-md border-yellow-700 overflow-hidden">
-        <img src={movie.Poster !== "N/A" ? movie.Poster : placeHolder} alt={movie.Title} />
+        <img
+          src={movie.Poster !== "N/A" ? movie.Poster : placeHolder}
+          alt={movie.Title}
+        />
       </div>
       <div className="col-span-2">
         <h2 className="text-3xl font-bold text-center mb-10">{movie.Title}</h2>
-        <h3 className="text-md font-bold mb-3">Rating: {movie.imdbRating}/10</h3>
-        <h3 className="text-md font-bold mb-5">Release Date: {movie.Released}</h3>
+        <h3 className="text-md font-bold mb-3">
+          Rating: {movie.imdbRating}/10
+        </h3>
+        <h3 className="text-md font-bold mb-5">
+          Release Date: {movie.Released}
+        </h3>
         <p>{movie.Plot}</p>
       </div>
     </div>
