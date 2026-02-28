@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
-import { searchMovies } from "../utilities/omdb";
+import { searchMovies, getMovieById } from "../utilities/omdb";
 
-const Cards = ({ query, type = "movie" }) => {
+const Cards = ({ query, type = "movie", movieIds }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,19 +12,27 @@ const Cards = ({ query, type = "movie" }) => {
       setLoading(true);
       setError(null);
 
-      const data = await searchMovies(query, type);
+      if (movieIds && movieIds.length > 0){
+        const results = await Promise.all(
+          movieIds.map((id) => getMovieById(id))
+        );
 
-      if (data.Response === "True") {
-        setMovies(data.Search);
-      } else {
-        setError(data.Error);
+        const valid = results.filter((m) => m.Response === "True");
+        setMovies(valid);
+      } else if (query) {
+        const data = await searchMovies(query, type);
+        if (data.Response === "True") {
+          setMovies(data.Search);
+        } else {
+          setError(data.Error);
+        }
       }
 
       setLoading(false);
     };
 
     fetchMovies();
-  }, [query]);
+  }, [query, movieIds]);
 
   if (loading) return <p className="text-center">Loading movies....</p>;
   if (error) return <p className="text-center text-red-500">{error}</p>
