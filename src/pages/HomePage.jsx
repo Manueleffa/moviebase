@@ -7,7 +7,7 @@ const HomePage = () => {
       <h2 className="text-3xl font-bold mb-7 text-center mt-10">
         Popular Movies
       </h2>
-      <Cards />
+      <Cards query="popular" type="movie" />
     </div>
   );
 };
