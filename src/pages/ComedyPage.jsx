@@ -1,5 +1,6 @@
-import React from 'react'
-import Cards from '../components/Cards'
+import React from "react";
+import { comedyMovies } from "../data/movieLists";
+import Cards from "../components/Cards";
 
 const ComedyPage = () => {
   return (
@@ -7,9 +8,9 @@ const ComedyPage = () => {
       <h2 className="text-3xl font-bold mb-7 text-center mt-10">
         Comedy Movies
       </h2>
-      <Cards />
+      <Cards movieIds={comedyMovies} />
     </div>
-  )
-}
+  );
+};
 
-export default ComedyPage
+export default ComedyPage;
