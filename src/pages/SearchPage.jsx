@@ -1,9 +1,25 @@
-import React from 'react'
+import React from "react";
+import { useSearchParams } from "react-router-dom";
+import Cards from "../components/Cards";
 
 const SearchPage = () => {
-  return (
-    <div>SearchPage</div>
-  )
-}
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("q");
 
-export default SearchPage
+  return (
+    <div>
+      <h2 className="text-3xl font-bold mb-7 text-center mt-10">
+        {query ? `Results for "${query}"` : "Search for a movie"}
+      </h2>
+      {query ? (
+        <Cards query={query} type="movie" />
+      ) : (
+        <p className="text-center text-gray-400">
+          Type something in the search bar above
+        </p>
+      )}
+    </div>
+  );
+};
+
+export default SearchPage;
