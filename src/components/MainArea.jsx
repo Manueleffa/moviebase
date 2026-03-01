@@ -3,10 +3,10 @@ import { Outlet } from "react-router-dom";
 import Topbar from "./Topbar";
 import placeHolder from "../assets/placeHolder.png";
 
-const MainArea = () => {
+const MainArea = ({ toggleSidebar }) => {
   return (
     <main className="col-span-3 border my-4 mr-4 rounded-xl border-[#3a414e] px-3 py-3 h-[96vh] overflow-y-auto">
-      <Topbar />
+      <Topbar toggleSidebar={toggleSidebar} />
       <Outlet />
     </main>
   );
