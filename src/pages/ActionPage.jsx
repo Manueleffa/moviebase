@@ -5,7 +5,7 @@ import Cards from "../components/Cards";
 const ActionPage = () => {
   return (
     <div>
-      <h2 className="text-3xl font-bold mb-7 text-center mt-10">
+      <h2 className="text-3xl font-bold mb-4 text-center mt-7">
         Action Movies
       </h2>
       <Cards movieIds={actionMovies} />

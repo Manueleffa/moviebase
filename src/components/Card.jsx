@@ -6,9 +6,9 @@ const Card = ({ movie }) => {
   const { Title, Year, Poster, imdbID } = movie;
 
   return (
-    <div className=" bg-yellow-700 border border-yellow-700 rounded overflow-x-hidden">
+    <div className=" bg-yellow-700 border border-yellow-900 rounded overflow-x-hidden">
       <NavLink to={`/moviedetails/${imdbID}`}>
-        <div className="w-full pb-4 md:h-84 overflow-hidden">
+        <div className="w-full pb-2 md:h-84 overflow-hidden">
           <img
             src={Poster !== "N/A" ? Poster : placeHolder}
             alt={Title}
@@ -19,8 +19,8 @@ const Card = ({ movie }) => {
           />
         </div>
         <div>
-          <h3 className="text-md font-bold px-2">{Title}</h3>
-          <p className="text-[14px] px-2 font-semibold mb-4">
+          <h3 className="text-sm font-bold px-2">{Title}</h3>
+          <p className="text-[11px] px-2 font-semibold mb-4">
             Realease Date: {Year}
           </p>
         </div>

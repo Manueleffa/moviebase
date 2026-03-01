@@ -8,7 +8,7 @@ const SearchPage = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold mb-7 text-center mt-10">
+      <h2 className="text-3xl font-bold mb-4 text-center mt-7">
         {query ? `Results for "${query}"` : "Search for a movie"}
       </h2>
       {query ? (

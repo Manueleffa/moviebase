@@ -30,7 +30,7 @@ const Topbar = ({ toggleSidebar }) => {
   };
 
   return (
-    <div className="grid grid-cols-5 items-center gap-4 mb-5 border border-[#3a414e] rounded-md px-3 py-4">
+    <div className="grid grid-cols-5 items-center gap-4 mb-5 border border-yellow-900 rounded-md px-3 py-4">
       <div className="flex items-center gap-3 col-span-1">
         <button
           onClick={toggleSidebar}
@@ -40,17 +40,20 @@ const Topbar = ({ toggleSidebar }) => {
         </button>
         <h2 className="text-lg font-semibold hidden md:block">{currentPage}</h2>
       </div>
-      <form onSubmit={handleSubmit} className="flex gap-x-1 items-center col-span-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex gap-x-1 items-center col-span-4"
+      >
         <input
           type="search"
           placeholder="Search movies by Title ..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="bg-black placeholder:text-xs px-4 border border-[#3a414e] rounded-tl-3xl rounded-bl-3xl w-full h-10"
+          className="bg-black placeholder:text-xs px-4 border border-yellow-900 rounded-tl-3xl rounded-bl-3xl w-full h-10"
         />
         <button
           type="submit"
-          className="bg-yellow-700 py-1 px-4 font-semibold text-sm rounded-tr-3xl rounded-br-3xl border border-[#3a414e] h-8"
+          className="bg-yellow-700 py-1 px-4 font-semibold text-sm rounded-tr-3xl rounded-br-3xl border border-yellow-900 h-8"
         >
           Search
         </button>
