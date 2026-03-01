@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ sidebarOpen, closeSidebar }) => {
   return (
-    <aside className="col-span-1 m-4 px-3 py-3 border border-[#3a414e] rounded-xl relative">
+    <aside
+      className={`fixed top-0 left-0 h-full z-20 bg-[#020d18] border-r border-[#3a414e] px-3 py-3 transition-transform duration-300 ease-in-out w-64 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} md:relative md:col-span-1 md:translate-x-0 md:w-auto md:border md:border-[#3a414e] md:rounded-xl`}
+    >
       <div className="mb-6">
         <NavLink to="/">
           <div className="flex items-center">
