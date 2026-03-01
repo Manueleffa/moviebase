@@ -7,14 +7,14 @@ const Cards = ({ query, type = "movie", movieIds }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(()=> {
+  useEffect(() => {
     const fetchMovies = async () => {
       setLoading(true);
       setError(null);
 
-      if (movieIds && movieIds.length > 0){
+      if (movieIds && movieIds.length > 0) {
         const results = await Promise.all(
-          movieIds.map((id) => getMovieById(id))
+          movieIds.map((id) => getMovieById(id)),
         );
 
         const valid = results.filter((m) => m.Response === "True");
@@ -35,13 +35,10 @@ const Cards = ({ query, type = "movie", movieIds }) => {
   }, [query, movieIds]);
 
   if (loading) return <p className="text-center">Loading movies....</p>;
-  if (error) return <p className="text-center text-red-500">{error}</p>
-
-
-
+  if (error) return <p className="text-center text-red-500">{error}</p>;
 
   return (
-    <div className="grid grid-cols-4 gap-4 mb-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
       {movies.map((movie) => (
         <Card key={movie.imdbID} movie={movie} />
       ))}

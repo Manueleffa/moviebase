@@ -9,7 +9,7 @@ const LayoutContainer = () => {
   const closeSidebar = () => setSidebarOpen(false);
 
   return (
-    <div className="bg-[#020d18] text-white h-screen grid grid-cols-4">
+    <div className="bg-[#020d18] text-white h-screen flex">
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-60 z-10 md:hidden"

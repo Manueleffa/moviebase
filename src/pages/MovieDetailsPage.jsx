@@ -32,15 +32,15 @@ const MovieDetailsPage = () => {
   if (!movie) return null;
 
   return (
-    <div className="grid grid-cols-3 items-center gap-x-15 p-4">
-      <div className="col-span-1 border rounded-md border-yellow-700 overflow-hidden h-full w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-3 items-start gap-6 p-4">
+      <div className="lg:col-span-1 border rounded-md border-yellow-700 overflow-hidden">
         <img
           src={movie.Poster !== "N/A" ? movie.Poster : placeHolder}
           alt={movie.Title}
-          className="w-full h-full object-cover"
+          className="w-full"
         />
       </div>
-      <div className="col-span-2">
+      <div className="lg:col-span-2">
         <h2 className="text-3xl font-bold text-center mb-7 text-yellow-700">
           {movie.Title}
         </h2>

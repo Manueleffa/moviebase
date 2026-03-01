@@ -8,7 +8,7 @@ const Card = ({ movie }) => {
   return (
     <div className=" bg-yellow-700 border border-yellow-700 rounded overflow-x-hidden">
       <NavLink to={`/moviedetails/${imdbID}`}>
-        <div className="w-full pb-4 h-84 overflow-hidden">
+        <div className="w-full pb-4 md:h-84 overflow-hidden">
           <img
             src={Poster !== "N/A" ? Poster : placeHolder}
             alt={Title}

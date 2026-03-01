@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
   return (
     <aside
-      className={`fixed top-0 left-0 h-full z-20 bg-[#020d18] border-r border-[#3a414e] px-3 py-3 transition-transform duration-300 ease-in-out w-64 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} md:relative md:col-span-1 md:translate-x-0 md:w-auto md:border md:border-[#3a414e] md:rounded-xl`}
+      className={`fixed top-0 left-0 h-[96vh] z-20 bg-[#020d18] border-r border-[#3a414e] px-3 py-3 transition-transform duration-300 ease-in-out w-64 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} md:relative md:block md:flex-shrink-0 md:translate-x-0 md:w-64 md:m-4 md:border md:border-[#3a414e] md:rounded-xl`}
     >
       <div className="mb-6">
         <NavLink to="/">
@@ -32,21 +32,31 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
 
       <ul>
         <li className="text-lg font-semibold border py-1 px-3 rounded-md border-[#3a414e] mb-3">
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/" onClick={closeSidebar}>
+            Home
+          </NavLink>
         </li>
         <li className="text-lg font-semibold border py-1 px-3 rounded-md border-[#3a414e] mb-3">
-          <NavLink to="/tvshows">TV Shows</NavLink>
+          <NavLink to="/tvshows" onClick={closeSidebar}>
+            TV Shows
+          </NavLink>
         </li>
         <li className="text-lg font-semibold border py-1 px-3 rounded-md border-[#3a414e] mb-3">
-          <NavLink to="/action">Action</NavLink>
+          <NavLink to="/action" onClick={closeSidebar}>
+            Action
+          </NavLink>
         </li>
         <li className="text-lg font-semibold border py-1 px-3 rounded-md border-[#3a414e] mb-3">
-          <NavLink to="/comedy">Comedy</NavLink>
+          <NavLink to="/comedy" onClick={closeSidebar}>
+            Comedy
+          </NavLink>
         </li>
       </ul>
       <ul className="absolute bottom-0 right-3 left-3">
         <li className="text-lg font-semibold border py-1 px-3 rounded-md border-[#3a414e] mb-3">
-          <NavLink to="/sethings">Sethings</NavLink>
+          <NavLink to="/sethings" onClick={closeSidebar}>
+            Sethings
+          </NavLink>
         </li>
       </ul>
     </aside>
